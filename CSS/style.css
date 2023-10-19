@@ -135,3 +135,27 @@ p {
   font-size: 1.2rem;
   line-height: 0.1;
 }
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  width: 90%;
+}
+.button {
+  background-color: rgb(141, 236, 236);
+  border: 2px solid black;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(87, 165, 126);
+  transition: 0.1s ease-in-out;
+  color: white;
+}
