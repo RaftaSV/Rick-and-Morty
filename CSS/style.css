@@ -144,7 +144,7 @@ p {
   @media screen and (max-width: 767px) {
     position: fixed;
     right: 8px;
-    bottom: 0;
+    top: 30%;
     height: 50%;
     width: 40px;
     display: flex;
