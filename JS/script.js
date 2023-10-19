@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  getData();
+});
+
 const getData = async (page) => {
   page = page || 1;
   const requestOptions = {
@@ -5,6 +9,7 @@ const getData = async (page) => {
   };
 
   try {
+    showLoader();
     const response = await fetch(
       `https://rickandmortyapi.com/api/character/?page=${page}`,
       requestOptions
@@ -20,6 +25,7 @@ const getData = async (page) => {
       const prevPageButton = document.getElementById("prevPage");
       nextPageButton.value = page;
       prevPageButton.value = page;
+      hiddeLoader();
     } else {
       console.error("Error al obtener los datos:", response.statusText);
     }
@@ -45,8 +51,6 @@ const printData = async (data) => {
     container.append(article);
   });
 };
-
-getData();
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
@@ -76,4 +80,25 @@ const prevPage = async (e) => {
   const nextPageButton = document.getElementById("nextPage");
   nextPageButton.value = numberPage;
   window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const showLoader = () => {
+  const loader = document.getElementById("loader");
+  // mostar el loader
+  loader.style.display = "flex";
+  const main = document.querySelector("main");
+  main.style.display = "none";
+  const footer = document.getElementById("footer");
+  footer.style.display = "none";
+};
+
+const hiddeLoader = () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+    const main = document.querySelector("main");
+    main.style.display = "grid";
+    const footer = document.getElementById("footer");
+    footer.style.display = "flex";
+  }, 500);
 };

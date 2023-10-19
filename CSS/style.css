@@ -147,14 +147,14 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  width: 90%;
+  width: 99%;
 }
 .button {
   background-color: rgba(141, 236, 236, 0.384);
   border: 2px solid black;
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
@@ -166,4 +166,40 @@ p {
   transform: scale(1.1);
   transition: 0.4s ease-in-out;
   color: white;
+}
+.loader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader::before {
+  content: "";
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Animación de giro */
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
