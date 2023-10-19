@@ -25,6 +25,8 @@ const getData = async (page) => {
       const prevPageButton = document.getElementById("prevPage");
       nextPageButton.value = page;
       prevPageButton.value = page;
+      const pageNumber = document.getElementById("page");
+      pageNumber.innerText = `page #${page}`;
       hiddeLoader();
     } else {
       console.error("Error al obtener los datos:", response.statusText);

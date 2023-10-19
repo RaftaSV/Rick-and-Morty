@@ -141,18 +141,41 @@ p {
 }
 
 #footer {
-  display: flex;
-  bottom: 10px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  width: 90%;
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    right: 8px;
+    bottom: 0;
+    height: 50%;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    width: 70%;
+  }
+  @media screen and (min-width: 1025px) {
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    bottom: 10px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    width: 70%;
+  }
 }
 .button {
   background-color: rgba(141, 236, 236, 0.384);
   border: 2px solid black;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 40px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -165,6 +188,20 @@ p {
   transform: scale(1.1);
   transition: 0.4s ease-in-out;
   color: white;
+}
+#page {
+  @media screen and (max-width: 767px) {
+    font-weight: 600;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-weight: 600;
+  }
+  @media screen and (min-width: 1025px) {
+    font-weight: 600;
+  }
 }
 .loader {
   display: block;
