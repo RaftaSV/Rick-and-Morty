@@ -54,6 +54,7 @@ window.addEventListener("scroll", function () {
 
   if (scrollPosition > 0) {
     navWrapper.style.backgroundColor = "rgba(174, 235, 240, 0.6)";
+    navWrapper.style.backdropFilter = "blur(4px)";
   } else {
     navWrapper.style.backgroundColor = "rgba(174, 235, 240, 1)";
   }
@@ -66,8 +67,7 @@ const nextPage = (e) => {
   getData(numberPage);
   const prevPageButton = document.getElementById("prevPage");
   prevPageButton.value = numberPage;
-  const mainElement = document.querySelector("main");
-  mainElement.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const prevPage = async (e) => {
@@ -75,6 +75,5 @@ const prevPage = async (e) => {
   getData(numberPage);
   const nextPageButton = document.getElementById("nextPage");
   nextPageButton.value = numberPage;
-  const mainElement = document.querySelector("main");
-  mainElement.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };

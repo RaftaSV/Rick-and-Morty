@@ -8,6 +8,7 @@ body {
   place-items: center;
   width: 100%;
   padding-bottom: 20px;
+  z-index: 2;
 }
 
 #nav {
@@ -94,18 +95,21 @@ body {
 
 #image {
   @media screen and (max-width: 767px) {
+    margin-top: 10px;
     width: 250px;
     height: 250px;
     border-radius: 50%;
     border: 2px solid rgb(117, 84, 84);
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
+    margin-top: 10px;
     width: 275px;
     height: 275px;
     border-radius: 50%;
     border: 2px solid rgb(117, 84, 84);
   }
   @media screen and (min-width: 1025px) {
+    margin-top: 10px;
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -138,13 +142,15 @@ p {
 
 #footer {
   display: flex;
+  position: fixed;
+  bottom: 10px;
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
   width: 90%;
 }
 .button {
-  background-color: rgb(141, 236, 236);
+  background-color: rgba(141, 236, 236, 0.384);
   border: 2px solid black;
   width: 150px;
   height: 40px;
@@ -152,10 +158,12 @@ p {
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
+  z-index: 1;
 }
 
 .button:hover {
   background-color: rgb(87, 165, 126);
-  transition: 0.1s ease-in-out;
+  transform: scale(1.1);
+  transition: 0.4s ease-in-out;
   color: white;
 }
